@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freedom Chair - Vectary Configurator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        #wrapper {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+        
+        #ui {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        #ui h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        
+        #ui section {
+            margin-bottom: 30px;
+        }
+        
+        #ui h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #555;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        #ui select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        
+        #ui select:hover {
+            border-color: #007bff;
+        }
+        
+        #ui select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+        
+        #vectary-configurator-wrapper {
+            flex: 1;
+            background: #868686;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #vectary-container {
+            flex: 1;
+            background: #868686;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        
+        .info {
+            background: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #004085;
+        }
+        
+        .info strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .vectary-error {
+            background: #fdecea;
+            border-left: 4px solid #f44336;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #b71c1c;
+        }
+
+        .vectary-success {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #2e7d32;
+        }
+
+        select:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <section id="ui">
+            <h1>Freedom Chair</h1>
+            
+            <div class="info">
+                <strong>Configuration:</strong>
+                Select options below to customize your chair. Changes will be reflected in the 3D model on the right.
+            </div>
+            
+            <!-- Options will be dynamically generated here -->
+            <div id="vectary-options-container" class="design-product-ajax-content">
+                <div class="loading">Loading configuration...</div>
+            </div>
+        </section>
+        
+        <div id="vectary-configurator-wrapper" class="vectary-configurator-wrapper" data-vectary-type="configurator">
+            <iframe
+                id="vectary-configurator-embed"
+                src="https://www.vectary.com/p/3ADUyNx1VERERfOOLzAdQ2"
+                frameborder="0"
+                allow="fullscreen"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Freedom Chair Mapping Configuration -->
+    <script>
+        window.freedomChairMapping = {
+            "variantsTitle": "Variants",
+            "applications": {
+                "Fabric Options": "fabric_seat",
+                "Metal Finish": "black metal",
+                "Armrest": "fabric_armrest",
+                "Lift Height": "lift",
+                "Base Options": "base"
+            },
+            "objectNames": {
+                "fabric_seat": ["fabric_seat", "fabric_backrest", "fabric_headrest", "fabric_armrest"],
+                "black metal": ["black_metal", "3_metals", "lift", "footrest_chrome", "footrest_black_metal", "base", "metal_armrest", "lift_cover"],
+                "fabric_armrest": ["Armrest_on_off"],
+                "lift": ["Lift_heights"],
+                "base": ["plastic_general", "glides", "plastic_wheels", "fabric_armrest"]
+            },
+            "materials": {
+                "fabric_seat": {
+                    "Vanir (kvadrat) - 113": { "name": "vanir_kvadrat", "color": "vanir113" },
+                    "Vanir (kvadrat) - 133": { "name": "vanir_kvadrat", "color": "vanir133" },
+                    "Vanir (kvadrat) - 193": { "name": "vanir_kvadrat", "color": "vanir193" },
+                    "Vanir (kvadrat) - 243": { "name": "vanir_kvadrat", "color": "vanir243" },
+                    "Vanir (kvadrat) - 293": { "name": "vanir_kvadrat", "color": "vanir293" },
+                    "Vanir (kvadrat) - 363": { "name": "vanir_kvadrat", "color": "vanir363" },
+                    "Vanir (kvadrat) - 373": { "name": "vanir_kvadrat", "color": "vanir373" },
+                    "Vanir (kvadrat) - 393": { "name": "vanir_kvadrat", "color": "vanir393" },
+                    "Vanir (kvadrat) - 413": { "name": "vanir_kvadrat", "color": "vanir413" },
+                    "Vanir (kvadrat) - 443": { "name": "vanir_kvadrat", "color": "vanir443" },
+                    "Vanir (kvadrat) - 473": { "name": "vanir_kvadrat", "color": "vanir473" },
+                    "Vanir (kvadrat) - 693": { "name": "vanir_kvadrat", "color": "vanir693" },
+                    "Vanir (kvadrat) - 733": { "name": "vanir_kvadrat", "color": "vanir733" },
+                    "Vanir (kvadrat) - 773": { "name": "vanir_kvadrat", "color": "vanir773" },
+                    "Vanir (kvadrat) - 883": { "name": "vanir_kvadrat", "color": "vanir883" },
+                    "Vanir (kvadrat) - 913": { "name": "vanir_kvadrat", "color": "vanir913" },
+                    "Vanir (kvadrat) - 943": { "name": "vanir_kvadrat", "color": "vanir943" },
+                    "Vanir (kvadrat) - 983": { "name": "vanir_kvadrat", "color": "vanir983" },
+                    "Corde4 (Humanscale) - Balsam": { "name": "corde4_humanscale", "color": "Corde4_balsam" },
+                    "Corde4 (Humanscale) - Black": { "name": "corde4_humanscale", "color": "Corde4_black" },
+                    "Corde4 (Humanscale) - Graphite": { "name": "corde4_humanscale", "color": "Corde4_graphite" },
+                    "Corde4 (Humanscale) - Brown": { "name": "corde4_humanscale", "color": "Corde4_brown" },
+                    "Corde4 (Humanscale) - Driftwood": { "name": "corde4_humanscale", "color": "Corde4_driftwood" },
+                    "Corde4 (Humanscale) - Peacock": { "name": "corde4_humanscale", "color": "Corde4_peacock" },
+                    "Corde4 (Humanscale) - Thalo": { "name": "corde4_humanscale", "color": "Corde4_thalo" },
+                    "Corde4 (Humanscale) - Medium Gray": { "name": "corde4_humanscale", "color": "Corde4_mediumgray" },
+                    "Corde4 (Humanscale) - Navy": { "name": "corde4_humanscale", "color": "Corde4_navy" },
+                    "Corde4 (Humanscale) - Azure": { "name": "corde4_humanscale", "color": "Corde4_azure" },
+                    "Corde4 (Humanscale) - Deep Violet": { "name": "corde4_humanscale", "color": "Corde4_deepviolet" },
+                    "Corde4 (Humanscale) - Parma Red": { "name": "corde4_humanscale", "color": "Corde4_parmared" },
+                    "Corde4 (Humanscale) - Pumpkin": { "name": "corde4_humanscale", "color": "Corde4_pumpkin" }
+                },
+                "black metal": {
+                    "Black Metal": { "name": "Black_metal", "color": "Black_metal" },
+                    "Graphite Metal": { "name": "graphite_metal", "color": "graphite_metal" },
+                    "Chrome Glossy": { "name": "chrome_glossy", "color": "chrome_glossy" }
+                },
+                "fabric_armrest": {
+                    "With Armrest": { "name": "fabric_armrest", "color": "armrest on" },
+                    "Without Armrest": { "name": "fabric_armrest", "color": "armrest off" }
+                },
+                "lift": {
+                    "Standard": { "name": "lift", "color": "Standard" },
+                    "Tall": { "name": "lift", "color": "Tall" },
+                    "High": { "name": "lift", "color": "High" }
+                },
+                "base": {
+                    "Wheels (Hard Floors)": { "name": "black_plastic", "color": "black_plastic" },
+                    "Glides (Soft/Carpet Floors)": { "name": "black_plastic", "color": "black_plastic" },
+                    "Locking Castors": { "name": "black_plastic", "color": "black_plastic" }
+                }
+            }
+        };
+
+        // Global configuration object used by vectary-simple.js
+        window.vectaryConfig = {
+            iframeId: "vectary-configurator-embed",
+            materialsCsvUrl: "./vectary/Vectary_Materials.csv",
+            variantsCsvUrl: "./vectary/Vectary_Products_Variants.csv",
+            mapping: window.freedomChairMapping,
+            isConfigurator: true,
+            debug: false // Set to true to enable console debugging
+        };
+
+        // Create UI elements dynamically based on mapping
+        (function createUIElements() {
+            var container = document.getElementById('vectary-options-container');
+            if (!container) {
+                return;
+            }
+
+            // Clear loading message
+            container.innerHTML = '';
+
+            var mapping = window.freedomChairMapping;
+            var applications = mapping.applications || {};
+
+            // Create select elements for each application
+            Object.keys(applications).forEach(function(applicationTitle) {
+                var applicationName = applications[applicationTitle];
+                var section = document.createElement('div');
+                section.className = 'field option';
+                section.setAttribute('data-option_id', applicationName);
+
+                var label = document.createElement('label');
+                label.textContent = applicationTitle;
+                label.className = 'label';
+                section.appendChild(label);
+
+                var selectWrapper = document.createElement('div');
+                selectWrapper.className = 'control';
+
+                var select = document.createElement('select');
+                select.id = 'select_' + applicationName;
+                select.name = 'options[' + applicationName + ']';
+                select.className = 'required-entry product-custom-option';
+                select.setAttribute('data-application', applicationName);
+
+                // Add default option
+                var defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.textContent = 'Choose an option...';
+                select.appendChild(defaultOption);
+
+                // Add options from mapping
+                if (mapping.materials && mapping.materials[applicationName]) {
+                    var materials = mapping.materials[applicationName];
+                    Object.keys(materials).forEach(function(optionLabel) {
+                        var option = document.createElement('option');
+                        option.value = optionLabel;
+                        option.textContent = optionLabel;
+                        select.appendChild(option);
+                    });
+                }
+
+                selectWrapper.appendChild(select);
+                section.appendChild(selectWrapper);
+                container.appendChild(section);
+            });
+        })();
+    </script>
+    <!-- Simplified Vectary integration -->
+    <script src="./vectary-simple.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,7 @@
+name,type,color_options,applications,products,_3d_file,download_link
+vanir_kvadrat,fabric,"vanir113, vanir133, vanir193, vanir243, vanir293, vanir363, vanir373, vanir393, vanir413, vanir443, vanir473, vanir693, vanir733, vanir883, vanir913, vanir943, vanir983","fabric_armrest, fabric_backrest, fabric_headrest, fabric_seat",Freedom_headrest,vanir_kvadrat.vctr3,./vectary/3d_files/vanir_kvadrat.vctr3
+Black_metal,metal,black_metal,"black_metal, 3_metals, footrest_black_metal, lift_cover, base, metal_armrest, lift",Freedom_headrest,black_metal.vctr3,./vectary/3d_files/black_metal.vctr3
+chrome_glossy,metal,chrome_glossy,"lift, 3_metals, footrest_chrome, lift_cover, base, metal_armrest",Freedom_headrest,chrome_glossy.vctr3,./vectary/3d_files/chrome_glossy.vctr3
+graphite_metal,metal,graphite_metal,"black_metal, 3_metals, footrest_black_metal, lift_cover, base, metal_armrest, lift",Freedom_headrest,graphite_metal.vctr3,./vectary/3d_files/graphite_metal.vctr3
+corde4_humanscale,fabric,"Corde4_balsam, Corde4_black, Corde4_graphite, Corde4_brown, Corde4_driftwood, Corde4_peacock, Corde4_thalo, Corde4_mediumgray, Corde4_navy, Corde4_azure, Corde4_deepviolet, Corde4_parmared, Corde4_pumpkin","fabric_armrest, fabric_backrest, fabric_headrest, fabric_seat",Freedom_headrest,corde4_humanscale.vctr3,./vectary/3d_files/corde4_humanscale.vctr3
+black_plastic,plastic,black_plastic,"plastic_general, glides, plastic_wheels, plastic_armrest, fabric_armrest",Freedom_headrest,black_plastic.vctr3,./vectary/3d_files/black_plastic.vctr3
