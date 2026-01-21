@@ -1,7 +1,10 @@
 {
-    "name": "freedom-headrest",
-    "version": "1.0.0",
-    "scripts": {
-      "start": "npx serve ."
-    }
+  "name": "freedom-headrest",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "devDependencies": {
+    "serve": "14.2.5"
   }
+}
