@@ -1,0 +1,12 @@
+/node_modules
+/dist
+/build
+/public
+/src
+/test
+/docs
+/examples
+/tests
+/tools
+/utils
+/vendor
